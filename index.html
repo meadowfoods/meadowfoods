@@ -51,9 +51,9 @@
     let msg = "";
 
   if (qty > 1) {
-    msg = `I want to order ${qty} bags of ${productName}`;
+    msg = `Hi, I want to order ${qty} bags of ${productName}`;
   } else {
-    msg = `I want to order 1 bag of ${productName}`;
+    msg = `Hi, I want to order 1 bag of ${productName}`;
   }
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
