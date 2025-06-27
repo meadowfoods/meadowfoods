@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MartGrab - Your Local Foodstuff Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Meadow foods</h1>
+    <p>Fresh foodstuff, fast delivery.</p>
+  </header>
+
+  <section class="products">
+    <div class="product">
+      <h2>Garri</h2>
+      <img src="843070b3-2bbe-4747-96b9-d0c92446c214_removalai_preview.png" alt="Garri" style="transform: rotate(90deg)" />
+      <p class="price"><strong>$20</strong></p>
+      <label for="qty-garri">Qty:</label>
+      <input type="number" id="qty-garri" min="1" value="1" />
+
+      <button onclick="orderProduct('Garri', 'qty-garri')" class="order-btn">Order on WhatsApp</button>
+    </div>
+    <div class="product">
+      <h2>Ofada Rice</h2>
+      <img src="e63f397a-05c2-49fe-8842-9acdcbf35a33_removalai_preview.png" alt="Ofada Rice" style="transform: rotate(-90deg)" />
+      <p class="price"><strong>$24</strong></p>
+
+      <label for="qty-ofada">Qty:</label>
+      <input type="number" id="qty-ofada" min="1" value="1" />
+
+      <button onclick="orderProduct('Ofada Rice', 'qty-ofada')" class="order-btn">Order on WhatsApp</button>
+    </div>
+    <div class="product">
+      <h2>Ewa Oloyin (Honey Beans)</h2>
+      <img src="d4dfb6d6-dad7-4788-9545-ae80883bf63c_removalai_preview.png" alt="Ewa Oloyin"/>
+      <p class="price"><strong>$30</strong></p>
+      <label for="qty-ofada">Qty:</label>
+      <input type="number" id="qty-ewa" min="1" value="1" />
+
+      <button onclick="orderProduct('Ewa Oloyin', 'qty-ewa')" class="order-btn">Order on WhatsApp</button>
+    </div>
+  </section>
+  <script>
+  const phone = "16395977483"; // Replace with your mom's number
+
+  function orderProduct(productName, qtyInputId) {
+    const qty = document.getElementById(qtyInputId).value || 1;
+    let msg = "";
+
+  if (qty > 1) {
+    msg = `I want to order ${qty} bags of ${productName}`;
+  } else {
+    msg = `I want to order 1 bag of ${productName}`;
+  }
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+  </script>
+
+
+  <footer>
+    <p>© 2025 MartGrab. All rights reserved.</p>
+  </footer>
+</body>
+</html>
